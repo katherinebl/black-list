@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {getPersons} from './services/peopleService';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
 
@@ -45,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <h1 className="app__title">The Black List of Employees <span role="img" aria-label="bad">😈</span></h1>
+        <h1 className="app__title">The Black List of Employees</h1>
         <ul className="app__list">
         {this.state.results.map(item => {
           return (
