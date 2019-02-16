@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {getPersons} from './services/peopleService';
+import Filter from './components/Filter';
 import './App.scss';
 
 class App extends Component {
@@ -68,12 +69,9 @@ class App extends Component {
 
         <header className="app__header">
           <h1 className="app__title">The Black List of Employees</h1>
-          <div className="app__filter">
-            <div className="app__filter-item">
-              <input className="app__filter-full-name" type="text" placeholder="Search for the guilty..." onKeyUp={this.getQuery} />
-            </div>
-          </div>
 
+          <Filter keyUpAction={this.getQuery}/>
+ 
         </header>
 
         <main className="app__main">
