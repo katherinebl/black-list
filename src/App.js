@@ -8,10 +8,25 @@ class App extends Component {
     super(props);
 
     this.state = {
-      results: []
+      results: this.getSavedData()
     };
 
     this.getPeople();
+  }
+
+  saveData(newResults) {
+    localStorage.setItem('blackData', JSON.stringify(newResults));
+  }
+
+  getSavedData() {
+    const blackData = localStorage.getItem('blackData');
+
+    if (blackData !== null) {
+      return JSON.parse(blackData);
+    } else {
+      this.getPeople();
+      return [];
+    }
   }
     
   getPeople(){
@@ -23,20 +38,21 @@ class App extends Component {
         this.setState({
           results : newResults
         });
+        this.saveData(newResults);
       });
   }
 
   render() {
     return (
       <div className="app">
-        <h1 className="app__title">The black Llst of Employees <span role="img" aria-label="bad">😈</span></h1>
+        <h1 className="app__title">The Black List of Employees <span role="img" aria-label="bad">😈</span></h1>
         <ul className="app__list">
         {this.state.results.map(item => {
           return (
             <li className="app__list-item" id={item.id} key={item.id}>
               <div className="person">
                 <h2 className="person__name">{`${item.name.first} ${item.name.last}`}</h2>
-                <img className="person__image" src={item.picture.medium} alt={`${item.first} ${item.last}`}/>
+                <img className="person__image" src={item.picture.medium} alt={`${item.name.first} ${item.name.last}`}/>
                 <div className="person__age">{item.dob.age}</div>
                 <div className="person__city">{item.location.city}</div>
               </div>
