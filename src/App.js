@@ -10,8 +10,6 @@ class App extends Component {
     this.state = {
       results: this.getSavedData()
     };
-
-    this.getPeople();
   }
 
   saveData(newResults) {
