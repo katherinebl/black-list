@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {getPersons} from './services/peopleService';
 import Filter from './components/Filter';
 import BlackList from './components/BlackList';
+import BlackCard from './components/BlackCard';
 import './App.scss';
 
 class App extends Component {
@@ -74,7 +75,8 @@ class App extends Component {
         </header>
 
         <main className="app__main">
-          <BlackList blackResults = {blackResults}/>
+          <BlackCard blackResults = {blackResults} blackId={1}/>
+          <BlackList blackResults = {blackResults} />
         </main>
       </div>
     );
