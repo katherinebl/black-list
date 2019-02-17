@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {getPersons} from './services/peopleService';
 import Filter from './components/Filter';
+import BlackList from './components/BlackList';
 import './App.scss';
 
 class App extends Component {
@@ -69,27 +70,11 @@ class App extends Component {
 
         <header className="app__header">
           <h1 className="app__title">The Black List of Employees</h1>
-
           <Filter keyUpAction={this.getQuery}/>
- 
         </header>
 
         <main className="app__main">
-          <ul className="app__list">
-          {blackResults.map(item => {
-            return (
-              <li className="app__list-item" id={item.id} key={item.id}>
-                <div className="person">
-                  <h2 className="person__name">{`${item.name.first} ${item.name.last}`}</h2>
-                  <img className="person__image" src={item.picture.medium} alt={`${item.name.first} ${item.name.last}`}/>
-                  <div className="person__age">{item.dob.age}</div>
-                  <div className="person__city">{item.location.city}</div>
-                </div>
-              </li>
-            );
-          })}
-          </ul>
-
+          <BlackList blackResults = {blackResults}/>
         </main>
       </div>
     );
