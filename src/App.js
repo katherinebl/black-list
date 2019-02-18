@@ -75,7 +75,7 @@ class App extends Component {
         </header>
 
         <main className="app__main">
-          <BlackCard blackResults = {blackResults} blackId={1}/>
+          <BlackCard blackResults = {blackResults} blackId={0}/>
           <BlackList blackResults = {blackResults} />
         </main>
       </div>
