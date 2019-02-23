@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import BlackPersons from './BlackPersons'
+import BlackPerson from './BlackPerson'
 import PropTypes from 'prop-types';
 
 class BlackList extends Component {
@@ -11,7 +11,7 @@ class BlackList extends Component {
                 return (
                     <li className="app__list-item" id={item.id} key={item.id}>
 
-                    <BlackPersons 
+                    <BlackPerson 
                         fullName = {`${item.name.first} ${item.name.last}`}
                         image = {item.picture.medium} alt={`${item.name.first} ${item.name.last}`}
                         age = {item.dob.age}

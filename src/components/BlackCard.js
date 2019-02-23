@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import NoBlackData from './NoBlackData';
 import PropTypes from 'prop-types';
 
 class BlackCard extends Component {
@@ -6,7 +7,7 @@ class BlackCard extends Component {
     const {blackResults, blackId} = this.props;
 
     if (blackResults.length === 0 || blackId >= blackResults.length) {
-      return <p>There is no available data</p>
+      return <NoBlackData />;
     } else {
       const selectedPerson = blackResults[blackId];
       const fullName = `${selectedPerson.name.first} ${selectedPerson.name.last}`;

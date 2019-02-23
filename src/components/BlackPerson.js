@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from 'prop-types';
 
-class BlackPersons extends Component {
+class BlackPerson extends Component {
   render() {
     const {fullName, image, age, city} = this.props;
     return (
@@ -15,11 +15,11 @@ class BlackPersons extends Component {
   }
 }
 
-BlackPersons.propTypes = {
+BlackPerson.propTypes = {
     fullName: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     age: PropTypes.number.isRequired,
     city: PropTypes.string.isRequired
 }
 
-export default BlackPersons;
+export default BlackPerson;
