@@ -1,5 +1,6 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 import NoBlackData from './NoBlackData';
+import GoBack from './GoBack';
 import PropTypes from 'prop-types';
 
 class BlackCard extends Component {
@@ -18,12 +19,16 @@ class BlackCard extends Component {
       const city = selectedPerson.location.city;
   
       return (
-        <div className="person person--detail">
-          <h2 className="person__name">{fullName}</h2>
-          <img className="person__image" src={image} alt={fullName} />
-          <div className="person__age">{age}</div>
-          <div className="person__city">{city}</div>
-        </div>
+        <Fragment>
+          <div className="person person--detail">
+            <h2 className="person__name">{fullName}</h2>
+            <img className="person__image" src={image} alt={fullName} />
+            <div className="person__age">{age}</div>
+            <div className="person__city">{city}</div>
+          </div>
+
+          <GoBack />
+        </Fragment>
       );
     }
   }
