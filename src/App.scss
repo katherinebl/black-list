@@ -2,6 +2,7 @@
 .app {
     margin: 0 3em;
     padding: 0 3em;
+    font-family: 'Comfortaa', cursive;
   }
   
   //Header
@@ -101,7 +102,7 @@
     padding-left: 0;
     height: 60vh;
     
-    .person__image {
+  .person__image {
     position: static;
     margin: 0 auto 24px;
   }
@@ -111,6 +112,21 @@
   .app__go-back-link {
     text-decoration: none;
     margin-left: 46%;
-    margin-top: 50%;
+    margin-top: 30%;
+    color: #00b894;
+    border: 1px solid #414141;
+  }
+
+  //Footer
+  .app__footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    margin-top: 10px;
+  }
+
+  .footer__text {
+    text-transform: uppercase;
     color: #00b894;
   }

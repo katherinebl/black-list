@@ -86,6 +86,10 @@ class App extends Component {
              
           </Switch>
         </main>
+
+        <footer className="app__footer">
+          <p className="footer__text">© Katherine Briceño | Adalab 2019</p>
+        </footer>
       </div>
     );
   }
