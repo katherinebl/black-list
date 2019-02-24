@@ -1,9 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import GoBack from './GoBack';
 
 class NoBlackData extends Component {
   render() {
     return (
-      <p>There is no available data</p>
+      <Fragment>
+        <p>There is no available data</p>
+        <GoBack />
+      </Fragment>
     );
   }
 }

@@ -41,6 +41,12 @@
     padding: 0;
     list-style: none;
   }
+
+  .app_list-link {
+    text-decoration: none;
+    color: #414141;
+  }
+
   .app__list-item {
     & + .app__list-item {
       margin-top: 16px;
@@ -49,14 +55,17 @@
     }
   }
    
-  //People
+  //Person
   .person {
+    text-decoration: none;
     position: relative;
-    padding-left: 92px;
-    min-height: 72px;
+    padding-top: 2%;
+    padding-left: 20%;
+    min-height: 55px;
   }
 
   .person__name {
+    text-decoration: none;
     text-transform: capitalize;
     margin: 0 0 10px;
     font-size: 22px;
@@ -86,11 +95,22 @@
   
   // Detail
   .person--detail {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     padding-left: 0;
+    height: 60vh;
     
     .person__image {
     position: static;
     margin: 0 auto 24px;
   }
+  }
+
+  //Go Back
+  .app__go-back-link {
+    text-decoration: none;
+    margin-left: 46%;
+    margin-top: 50%;
+    color: #00b894;
   }
