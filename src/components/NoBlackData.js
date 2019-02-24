@@ -1,9 +1,9 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 class NoBlackData extends Component {
   render() {
     return (
-        <p>There is no available data</p>
+      <p>There is no available data</p>
     );
   }
 }

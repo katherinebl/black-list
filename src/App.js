@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {getPersons} from './services/peopleService';
+import {Switch, Route} from 'react-router-dom';
 import Filter from './components/Filter';
 import BlackList from './components/BlackList';
 import BlackCard from './components/BlackCard';
@@ -66,17 +67,24 @@ class App extends Component {
 
   render() {
     const blackResults = this.filterThis();
+    const {results} = this.state;
     return (
       <div className="app">
 
         <header className="app__header">
           <h1 className="app__title">The Black List of Employees</h1>
-          <Filter keyUpAction={this.getQuery}/>
+          <Switch>
+            <Route exact path="/" render={() => <Filter keyUpAction={this.getQuery}/> }/>
+          </Switch>
         </header>
 
         <main className="app__main">
-          <BlackCard blackResults = {blackResults} blackId={0}/>
-          <BlackList blackResults = {blackResults} />
+          <Switch>
+            <Route exact path="/" render={() => <BlackList blackResults={blackResults} />}/>
+            
+            <Route path="/person/:id" render={props => <BlackCard match={props.match} blackResults={results} blackId={0}/>}/>
+             
+          </Switch>
         </main>
       </div>
     );

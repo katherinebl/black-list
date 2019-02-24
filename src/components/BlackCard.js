@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 
 class BlackCard extends Component {
   render() {
-    const {blackResults, blackId} = this.props;
+
+    const {blackResults} = this.props;
+    const blackId = this.props.match.params.id;
 
     if (blackResults.length === 0 || blackId >= blackResults.length) {
       return <NoBlackData />;
@@ -16,12 +18,12 @@ class BlackCard extends Component {
       const city = selectedPerson.location.city;
   
       return (
-          <div className="person person--detail">
-              <h2 className="person__name">{fullName}</h2>
-              <img className="person__image" src={image} alt={fullName} />
-              <div className="person__age">{age}</div>
-              <div className="person__city">{city}</div>
-          </div>
+        <div className="person person--detail">
+          <h2 className="person__name">{fullName}</h2>
+          <img className="person__image" src={image} alt={fullName} />
+          <div className="person__age">{age}</div>
+          <div className="person__city">{city}</div>
+        </div>
       );
     }
   }
@@ -29,6 +31,6 @@ class BlackCard extends Component {
 
 BlackCard.propTypes = {
     blackResults : PropTypes.arrayOf(PropTypes.object),
-    blackId : PropTypes.number.isRequired
+    match: PropTypes.object.isRequired
 }
 export default BlackCard;
